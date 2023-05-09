@@ -27,7 +27,7 @@ const TimePicker = ({ className, dateTime, onChange }) => {
   const handleOnChange = (hours, minutes) => {
     const dateBase = dayjs(dateTime);
 
-    const updatedDateWithTime = dateBase.hour(hours).minute(minutes);
+    const updatedDateWithTime = dateBase.hour(hours).minute(minutes).second(0);
 
     onChange(updatedDateWithTime.format());
   };

@@ -9,7 +9,7 @@ const openMenuButton = () => screen.getByTestId("open-menu-button");
 describe("TimePicker", () => {
   const setup = (props) => {
     const initialProps = {
-      dateTime: "2023-05-09T00:00:00+01:00",
+      dateTime: "2023-05-09T00:00:45+01:00",
       onChange: () => {},
     };
 
