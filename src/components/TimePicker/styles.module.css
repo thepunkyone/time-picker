@@ -1,0 +1,9 @@
+.menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menuOpen {
+    opacity: 1;
+    visibility: visible;
+}

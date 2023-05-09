@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import dayjs from "dayjs";
+import classNames from "classnames";
 
 import TimePickerMenu from "@/components/TimePickerMenu";
+
+import styles from "./styles.module.css";
 
 const initialState = {
   hours: { value: null, label: "HH" },
@@ -12,6 +15,14 @@ const initialState = {
 const TimePicker = ({ dateAndTime, onChange }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState(initialState);
+
+  const toggleMenuOpen = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   const handleOnChange = (hours, minutes) => {
     const dateBase = dayjs(dateAndTime);
@@ -58,16 +69,20 @@ const TimePicker = ({ dateAndTime, onChange }) => {
         aria-labelledby="label"
         aria-controls="menu"
         aria-expanded={menuOpen}
+        onClick={toggleMenuOpen}
+        data-testid="open-menu-button"
       >
         {time.hours.label}:{time.minutes.label}
       </button>
       <TimePickerMenu
+        className={classNames(styles.menu, { [styles.menuOpen]: menuOpen })}
         aria-labelledby="label"
         id="menu"
         hours={time.hours.value}
         minutes={time.minutes.value}
         onSelectHours={handleSelectHours}
         onSelectMinutes={handleSelectMinutes}
+        onClose={closeMenu}
       />
     </div>
   );
