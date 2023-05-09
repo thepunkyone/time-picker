@@ -1,14 +1,14 @@
 # React Time Picker Component
 
-This Time Picker component uses a split hour (24 hour) / minute (5 minute increments) menu to select the required time of the day.
+`TimePicker` is a controlled input component, which uses a split hour (24 hour) / minute (5 minute increments) menu to select the required time of the day.
 
-It takes two required props: a `dateTime` prop of date in `ISO8601` string format and an `onChange` prop which is called with the updated time in `ISO8601` string format whenever hours or minutes are updated. It also takes an optional `className` prop.
+The component takes two required props: a `dateTime` prop of date in `ISO8601` string format and an `onChange` prop which is called with the updated time in `ISO8601` string format whenever hours or minutes are updated. It also takes an optional `className` prop.
 
-If not interacted with, the picker component displays a placeholder label `HH:MM`, once interacted with it displays a label with the selected hours and minutes, for example `23:05`.
+If not interacted with, `TimePicker` component displays a placeholder label `HH:MM`, once interacted with it displays a label with the selected hours and minutes, for example `23:05`.
 
 In order to prevent invalid date-time being created, selecting an hour for the first time will set minutes to `"00"` and selecting minutes for the first time will set the hour to `"00"`.
 
-TimePicker props:
+`TimePicker` props:
 ```
 {
   className?: string
@@ -17,7 +17,7 @@ TimePicker props:
 }
 ```
 
-TimePicker implementation:
+`TimePicker` implementation:
 ```jsx
 // ...
 import dayjs from "dayjs";
@@ -40,5 +40,7 @@ const MyComponent = () => {
 }
 // ...
 ```
+
+For an interactive demo of `TimePicker` please clone this repo and start the app in development mode by calling `npm run dev` from the command line.
 
 
