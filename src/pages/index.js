@@ -30,12 +30,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <p>
+        <h1 className={styles.heading}>
           Selected time:{" "}
           {userHasSelectedTime ? dayjs(dateAndTime).format("hh:mm") : ""}
-        </p>
+        </h1>
 
-        <TimePicker dateAndTime={dateAndTime} onChange={handleTimeChange} />
+        <TimePicker
+          className={styles.picker}
+          dateAndTime={dateAndTime}
+          onChange={handleTimeChange}
+        />
       </main>
     </>
   );

@@ -12,7 +12,7 @@ const initialState = {
   minutes: { value: null, label: "MM" },
 };
 
-const TimePicker = ({ dateAndTime, onChange }) => {
+const TimePicker = ({ className, dateAndTime, onChange }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState(initialState);
 
@@ -63,9 +63,12 @@ const TimePicker = ({ dateAndTime, onChange }) => {
   };
 
   return (
-    <div>
-      <span id="label">Select time</span>
+    <div className={classNames(styles.field, className)}>
+      <span className={styles.label} id="label">
+        Select time
+      </span>
       <button
+        className={styles.button}
         aria-labelledby="label"
         aria-controls="menu"
         aria-expanded={menuOpen}
@@ -89,6 +92,7 @@ const TimePicker = ({ dateAndTime, onChange }) => {
 };
 
 TimePicker.propTypes = {
+  className: PropTypes.string,
   dateAndTime: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

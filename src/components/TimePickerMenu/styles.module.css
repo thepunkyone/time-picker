@@ -1,0 +1,65 @@
+.menu {
+    background-color: lightgray;
+    padding-top: 16px;
+    margin-top: -16px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.closeButton {
+    display: block;
+    margin: 10px 20px 10px auto;
+    background: none;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: black;
+    cursor: pointer;
+}
+
+.closeButton:hover, .closeButton:focus {
+    background-color: darkgrey;
+}
+
+.lists {
+    display: flex;
+    border-top: 1px solid black;
+}
+
+.list {
+    width: 50%;
+    padding: 10px 20px 20px;
+    color:black;
+}
+
+.list:first-of-type {
+    border-right: 1px solid black;
+}
+
+.list ul {
+    list-style-type: none;
+}
+
+.list span {
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.list li {
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.list li:hover, .list li:focus {
+    background-color: cadetblue;
+}
+
+.list li[aria-selected=true] {
+    background-color: teal;
+}
+
+
