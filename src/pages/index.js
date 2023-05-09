@@ -10,11 +10,11 @@ import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [dateAndTime, setDateAndTime] = useState(() => dayjs().format());
+  const [dateTime, setDateTime] = useState(() => dayjs().format());
   const [userHasSelectedTime, setUserHasSelectedTime] = useState(false);
 
-  const handleTimeChange = (updatedDateAndTime) => {
-    setDateAndTime(updatedDateAndTime);
+  const handleTimeChange = (updatedDateTime) => {
+    setDateTime(updatedDateTime);
 
     if (!userHasSelectedTime) {
       setUserHasSelectedTime(true);
@@ -32,12 +32,12 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <h1 className={styles.heading}>
           Selected time:{" "}
-          {userHasSelectedTime ? dayjs(dateAndTime).format("hh:mm") : ""}
+          {userHasSelectedTime ? dayjs(dateTime).format("HH:mm") : ""}
         </h1>
 
         <TimePicker
           className={styles.picker}
-          dateAndTime={dateAndTime}
+          dateTime={dateTime}
           onChange={handleTimeChange}
         />
       </main>

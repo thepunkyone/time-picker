@@ -12,7 +12,7 @@ const initialState = {
   minutes: { value: null, label: "MM" },
 };
 
-const TimePicker = ({ className, dateAndTime, onChange }) => {
+const TimePicker = ({ className, dateTime, onChange }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState(initialState);
 
@@ -25,7 +25,7 @@ const TimePicker = ({ className, dateAndTime, onChange }) => {
   };
 
   const handleOnChange = (hours, minutes) => {
-    const dateBase = dayjs(dateAndTime);
+    const dateBase = dayjs(dateTime);
 
     const updatedDateWithTime = dateBase.hour(hours).minute(minutes);
 
@@ -93,7 +93,7 @@ const TimePicker = ({ className, dateAndTime, onChange }) => {
 
 TimePicker.propTypes = {
   className: PropTypes.string,
-  dateAndTime: PropTypes.string.isRequired,
+  dateTime: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
